@@ -17,3 +17,12 @@ if (escolha == 1) {
 } else {
     alert('Sua resposta está fora do solicitado, até logo!');
 }
+
+let resp;
+
+while (resp != '') {
+    resp = prompt("Tem alguma tecnologia que você gostaria de aprender?");
+    if (resp == '') {
+        alert("Tchauzinho!")
+    } else (alert("Que legal!"))
+}
