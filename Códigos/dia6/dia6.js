@@ -6,8 +6,9 @@ let addItem = "Sim";
 let item;
 let categoria;
 let removeItem;
+let posicao;
 
-while (addItem == "Sim" || addItem == "sim") {
+while (addItem != "Não" || addItem != "Não") {
     addItem = prompt("Deseja adicionar ou remover uma comida na sua lista de compras? Responda: 'Sim' ou 'Não', para adicionar ou responda 'Remover' para remover");
     if (addItem == "Sim" || addItem == "sim") {
         comida = prompt("Qual comida você deseja inserir?");
@@ -28,30 +29,37 @@ while (addItem == "Sim" || addItem == "sim") {
     } else if (addItem == "Remover" || addItem == "remover") {
         removeItem = prompt(
             ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
-        )
-    } else if (varrerListas() == false) {
-        alert("O item não existe na lista")
-    }
-}
+        );
 
-function varrerListas(item) {
-    if (frutas.includes(item)) {
-        let posicao = frutas.indexOf(item);
-        removeItem(frutas, posicao);
-    } else if (laticinios.includes(item)) {
-        posicao = laticinios.includes(item);
-        removeItem(laticinios, posicao);
-    } else if (congelados.includes(item)) {
-        posicao = congelados.indexOf(item);
-        removeItem(congelados, posicao);
-    } else if (doces.includes(item)) {
-        posicao = doces.indexOf(item);
-        removeItem(doces, posicao);
-    } else {
-        return false;
+        if (frutas.includes(removeItem)) {
+            posicao = frutas.indexOf(removeItem);
+            frutas.splice(frutas.indexOf(posicao), 1);
+            alert(
+                ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
+            );
+        } else if (laticinios.includes(removeItem)) {
+            posicao = laticinios.includes(removeItem);
+            laticinios.splice(laticinios.indexOf(posicao), 1);
+            alert(
+                ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
+            );
+        } else if (congelados.includes(removeItem)) {
+            posicao = congelados.indexOf(removeItem);
+            congelados.splice(congelados.indexOf(posicao), 1);
+            alert(
+                ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
+            );
+        } else if (doces.includes(removeItem)) {
+            posicao = doces.indexOf(removeItem);
+            doces.splice(doces.indexOf(posicao), 1);
+            alert(
+                ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
+            );
+        } else {
+            alert("O item não existe na lista");
+            alert(
+                ` Frutas: ${frutas}\n Laticinios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}`
+            );
+        }
     }
-}
-
-function removeItemDaLista(lista, item) {
-    lista.shift(item);
 }
