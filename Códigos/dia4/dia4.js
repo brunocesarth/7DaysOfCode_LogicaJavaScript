@@ -1,28 +1,18 @@
-const resposta = prompt("Você gostaria de seguir em qual área? Digite 1 para Front-end e 2 para Back-end");
+let max = 10;
+let min = 1;
+const rand = Math.floor(Math.random() * (max - min + 1) + min)
+let chute;
+const num = rand;
 
-if (resposta == 1) {
-    const respFrontend = prompt('Legal, e você quer aprender React ou Vue? Digite 1 para React e 2 para Vue');
-} else if (resposta == 2) {
-    const respBackend = prompt('Legal e você quer aprender C# ou Java? Digite 1 para C# e 2 para Java');
-} else {
-    alert('Sua resposta está fora do solicitado, até logo!');
-};
-
-const escolha = prompt("E você quer seguir se especializando na área escolhida ou vai se devolver para se tornar Fullstack? Digite 1 para especialista e 2 para Fullstack");
-
-if (escolha == 1) {
-    alert("Legal, continue estudando que você vai ser um ótimo especialista");
-} else if (escolha == 2) {
-    alert("Legal, continue estudando que você vai ser um ótimo dev fullstack");
-} else {
-    alert('Sua resposta está fora do solicitado, até logo!');
-}
-
-let resp;
-
-while (resp != '') {
-    resp = prompt("Tem alguma tecnologia que você gostaria de aprender?");
-    if (resp == '') {
-        alert("Tchauzinho!")
-    } else (alert("Que legal!"))
-}
+for (let tentativa = 1 || chute != num; tentativa <= 3; tentativa++) {
+    chute = prompt("Chute um número?");
+    if (chute != num) {
+        alert("Você errou, tente novamente!");
+        tentativa + 1;
+    } else if (chute == num) {
+        alert("Parabéns, você acertou!");
+        tentativa = 3;
+    } else {
+        alert("Poxa, você perdeu! Pode tentar novamente se quiser.");
+    }
+} 
